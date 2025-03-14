@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, Utensils } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, Utensils } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function LoginPage() {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    setIsLoading(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsLoading(false)
+      setIsLoading(false);
       // Redirect would happen here after successful login
-    }, 1500)
-  }
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -44,12 +44,18 @@ export default function LoginPage() {
           <div className="bg-saffron-500 p-2 rounded-full">
             <Utensils className="h-6 w-6 text-white" />
           </div>
-          <span className="text-2xl font-bold font-playfair text-burgundy-500">MenuMagic</span>
+          <span className="text-2xl font-bold font-playfair text-burgundy-500">
+            MenuMagic
+          </span>
         </div>
 
         <div className="mb-8">
-          <h1 className="text-3xl font-bold font-playfair text-burgundy-500 mb-2">Welcome back</h1>
-          <p className="text-charcoal-600">Sign in to your account to continue</p>
+          <h1 className="text-3xl font-bold font-playfair text-burgundy-500 mb-2">
+            Welcome back
+          </h1>
+          <p className="text-charcoal-600">
+            Sign in to your account to continue
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6 flex-1">
@@ -85,7 +91,10 @@ export default function LoginPage() {
 
           <div className="flex items-center space-x-2">
             <Checkbox id="remember" />
-            <Label htmlFor="remember" className="text-sm font-normal cursor-pointer">
+            <Label
+              htmlFor="remember"
+              className="text-sm font-normal cursor-pointer"
+            >
               Remember me for 30 days
             </Label>
           </div>
@@ -103,12 +112,17 @@ export default function LoginPage() {
               <div className="w-full border-t border-cream-300"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-charcoal-500">or continue with</span>
+              <span className="px-2 bg-white text-charcoal-500">
+                or continue with
+              </span>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <Button variant="outline" className="rounded-xl border-cream-300 hover:bg-cream-100 h-12">
+            <Button
+              variant="outline"
+              className="rounded-xl border-cream-300 hover:bg-cream-100 h-12"
+            >
               <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                 <path
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -129,8 +143,15 @@ export default function LoginPage() {
               </svg>
               Google
             </Button>
-            <Button variant="outline" className="rounded-xl border-cream-300 hover:bg-cream-100 h-12">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <Button
+              variant="outline"
+              className="rounded-xl border-cream-300 hover:bg-cream-100 h-12"
+            >
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
               </svg>
               Facebook
@@ -138,8 +159,11 @@ export default function LoginPage() {
           </div>
 
           <p className="text-center text-sm text-charcoal-600 mt-8">
-            Don't have an account?{" "}
-            <Link href="/signup" className="text-saffron-500 hover:text-saffron-600 font-medium transition-colors">
+            Don&apos;t have an account?{" "}
+            <Link
+              href="/signup"
+              className="text-saffron-500 hover:text-saffron-600 font-medium transition-colors"
+            >
               Sign up
             </Link>
           </p>
@@ -161,9 +185,12 @@ export default function LoginPage() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-burgundy-500/70 to-transparent flex flex-col justify-end p-6 text-white">
-              <h3 className="text-2xl font-bold font-playfair mb-2">Create beautiful menus</h3>
+              <h3 className="text-2xl font-bold font-playfair mb-2">
+                Create beautiful menus
+              </h3>
               <p className="text-white/90">
-                Join hundreds of restaurant owners who have transformed their dining experience
+                Join hundreds of restaurant owners who have transformed their
+                dining experience
               </p>
             </div>
           </div>
@@ -181,6 +208,5 @@ export default function LoginPage() {
         ></div>
       </div>
     </div>
-  )
+  );
 }
-

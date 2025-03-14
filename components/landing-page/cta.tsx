@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { CheckCircle2, ArrowRight, Zap } from 'lucide-react';
-import Card from './ui-custom/card';
-import Button from './ui-custom/button';
+import React from "react";
+import { CheckCircle2, ArrowRight, Zap } from "lucide-react";
+import Card from "./ui-custom/card";
+import Button from "./ui-custom/button";
 
 interface PlanFeatureProps {
   text: string;
@@ -32,17 +31,23 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
   description,
   features,
   popular = false,
-  delay
+  delay,
 }) => {
   return (
     <Card
       variant={popular ? "default" : "outline"}
-      className={`h-full relative ${popular ? 'shadow-card border-saffron-200' : ''}`}
+      className={`h-full relative ${
+        popular ? "shadow-card border-saffron-200" : ""
+      }`}
       hover="lift"
     >
       <div
         className="p-6 flex flex-col h-full"
-        style={{ animation: 'fade-up 0.5s ease-out forwards', animationDelay: `${delay}ms`, opacity: 0 }}
+        style={{
+          animation: "fade-up 0.5s ease-out forwards",
+          animationDelay: `${delay}ms`,
+          opacity: 0,
+        }}
       >
         {popular && (
           <div className="absolute top-0 right-0 bg-saffron-500 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-lg">
@@ -51,11 +56,17 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
         )}
 
         <div className="mb-6">
-          <h3 className="text-xl font-semibold text-charcoal-800 mb-2">{name}</h3>
+          <h3 className="text-xl font-semibold text-charcoal-800 mb-2">
+            {name}
+          </h3>
           <p className="text-charcoal-600 mb-4">{description}</p>
           <div className="flex items-end">
-            <span className="text-3xl font-bold text-charcoal-800">{price}</span>
-            {price !== 'Free' && <span className="text-charcoal-600 ml-1">/month</span>}
+            <span className="text-3xl font-bold text-charcoal-800">
+              {price}
+            </span>
+            {price !== "Free" && (
+              <span className="text-charcoal-600 ml-1">/month</span>
+            )}
           </div>
         </div>
 
@@ -91,10 +102,10 @@ const CallToAction: React.FC = () => {
         "1 menu design",
         "Up to 15 menu items",
         "Basic QR code",
-        "MenuKart branding included"
+        "MenuKart branding included",
       ],
       popular: false,
-      delay: 0
+      delay: 0,
     },
     {
       name: "Premium",
@@ -107,10 +118,10 @@ const CallToAction: React.FC = () => {
         "Remove MenuKart branding",
         "Food photography guidance",
         "Seasonal menu templates",
-        "Priority support"
+        "Priority support",
       ],
       popular: true,
-      delay: 100
+      delay: 100,
     },
     {
       name: "Enterprise",
@@ -123,11 +134,11 @@ const CallToAction: React.FC = () => {
         "Custom QR code design",
         "White label solution",
         "API access",
-        "Dedicated account manager"
+        "Dedicated account manager",
       ],
       popular: false,
-      delay: 200
-    }
+      delay: 200,
+    },
   ];
 
   return (
@@ -139,11 +150,13 @@ const CallToAction: React.FC = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-charcoal-800">
-            Choose The Plan That's Right For Your Restaurant
+            Choose The Plan That&apos;s Right For Your Restaurant
           </h2>
 
           <p className="text-lg text-charcoal-600">
-            Whether you're a small family restaurant or a large chain, we have a plan that fits your needs. All plans include our core features.
+            Whether you&apos;re a small family restaurant or a large chain, we
+            have a plan that fits your needs. All plans include our core
+            features.
           </p>
         </div>
 
@@ -163,7 +176,8 @@ const CallToAction: React.FC = () => {
 
         <div className="mt-16 text-center">
           <p className="text-charcoal-600 mb-4">
-            Not sure which plan is right for you? Contact us for a personalized recommendation.
+            Not sure which plan is right for you? Contact us for a personalized
+            recommendation.
           </p>
           <Button variant="outline" size="lg">
             Contact Sales
@@ -175,4 +189,3 @@ const CallToAction: React.FC = () => {
 };
 
 export default CallToAction;
-
